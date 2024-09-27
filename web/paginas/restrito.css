@@ -1,0 +1,62 @@
+body {
+    background-image: url(../paginas/img_paginas/vaporwaveisnotdead.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh; 
+    background-position: center;
+    max-width: 1200px; 
+    margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+   
+}
+
+header {
+    width: 100%;
+    padding: 28px 8%;
+    margin-top: 0; 
+}
+
+#navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px; 
+}
+
+#nav_list {
+    list-style-type: none; /* Remove os marcadores da lista */
+    padding: 0;
+    display: flex; /* Adicionado: permite que os itens fiquem lado a lado */
+}
+
+.nav-item a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: white; /* Cor dos links */
+    padding: 10px; 
+    transition: color 0.3s; 
+}
+
+.nav-item a:hover {
+    color: #61dafb; 
+}
+
+
+#nav_logo {
+    height: 100px; 
+    width: auto;
+    margin-right: 400px; 
+     
+   
+}
+#welcome_text {
+    font-size: 30px; 
+    color: white; 
+    margin-left: 1px; 
+    align-self: center; /* Centraliza verticalmente em relação ao navbar */
+}
+.user-name {
+    font-size: 30px; 
+    color: #f4f4f4; 
+    font-weight: bold; 
+    margin-left: 0px; 
+}

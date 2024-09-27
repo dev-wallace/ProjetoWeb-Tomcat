@@ -1,58 +1,47 @@
-<%-- 
-    Document   : restrito
-    Created on : 17 de set. de 2024, 11:06:28
-    Author     : jefferson.etokura
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <html lang="pt-br">
-    <head>
-        <title>Meu Site</title> <!-- titulo do site -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../style.css">
-
-
-    </head>
-    <body>
-        <header>
-            <div class="logo">
-                <img src="../logo.png.webp" alt="Logotipo da amazon">
-            </div>
-
-            <div class="texto">
-                <h1>
-                    A melhor empresa do brasil
-                </h1>
-
-                <div class="login">
-                    <p>Bem vindo,</p>
-                        <%
-                        
-                        String nome = request.getParameter("nome");
-                        out.print(nome);
-
-                        %>
-                </div>
-     <nav>
-            <a href="cadastrar_produtos.html" target = "conteudo">Cadastrar</a>           
-            <a href="alterar_produtos.html">Alterar</a>                  
-            <a href="consultar_produtos.html">Consultar</a>       
-            <a href="listar_produtos.html">Lista</a>            
-            <a href="alterar_senha.html">Excluir</a>    
-        </nav>
-        </header>
-
-        <nav>
-
-        </nav>
-        <main>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descrição do meu site. Aqui você pode se cadastrar e salvar produtos.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="../paginas/restrito.css">
+    
+    <title>Meu Site</title>
+    <link rel="icon" href="caminho/para/seu/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav id="navbar">
             
-        </main>
-        <footer>
+            <span id="welcome_text">Bem-vindo de volta!</span> 
+            <span class="user-name">
+                <%
+                    String nome = request.getParameter("nome");
+                    out.print(nome);
+                %>
+            </span>
+       
 
-        </footer>
-    </body>
+            <img src="img_paginas/pngfind.com-pokemon-mew-png-6847790.png" id="nav_logo" alt="Logo">
+            
+            <ul id="nav_list">
+
+                <li class="nav-item">
+                    <a href="cadastrese.html">Cadastrar usuario</a>
+                </li>
+                <li class="nav-item">
+                    <a href="salvar_produto.html">Salvar produto</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html">Sair</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</body>
 </html>
