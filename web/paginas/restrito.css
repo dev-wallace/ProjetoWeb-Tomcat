@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
 body {
     background-image: url(../paginas/img_paginas/vaporwaveisnotdead.png);
     background-repeat: no-repeat;
@@ -28,6 +35,7 @@ header{
     align-items: center;
     justify-content: space-between;
     font-size: 15px; 
+  
 }
 
 #nav_list {
@@ -47,32 +55,25 @@ header{
     color: #61dafb; 
 }
 
-
 #nav_logo {
-    height: 100px; 
+    height: 100px;
     width: auto;
-    margin-right: 400px; 
-     
-   
-}
-#welcome_text {
-    font-size: 30px; 
-    color: white; 
-    margin-left: 1px; 
-    align-self: center; /* Centraliza verticalmente em relação ao navbar */
-}
-.user-name {
-    font-size: 30px; 
-    color: #f4f4f4; 
-    font-weight: bold; 
-    margin-left: 0px; 
+    margin-right: 660px;
 }
 
-.logo{
+#welcome_text {
+    font-size: 2em;
+    color: white;
+    align-self: center;
+    margin-right: 10px; 
+}
+#user-name {
     font-size: 2em;
     color: #fff;
     user-select: none;
+    margin-left: 20px;
 }
+
 .navegation a{
     position: relative;
     font-size: 1.1em;
@@ -99,22 +100,3 @@ header{
 
 
 }
-.navegation .btnLogin-popup{
-    width: 130px;
-    height: 50px;
-    background: transparent;
-    border: 2px solid #fff;
-    outline: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1em;
-    color: #fff;
-    font-weight: 500;
-    margin-left: 40px;
-    transition: 0.5s;
-}
-.navegation .btnLogin-popup:hover{
-    background: #fff;
-    color: #162938;
-}
-

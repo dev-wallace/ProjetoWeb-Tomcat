@@ -18,17 +18,19 @@
     <header>
         <nav class="navegation">
             
+            
             <span id="welcome_text">Bem-vindo de volta!</span>
             
-            <span class="user-name">
+           
+            <span id="user-name">
                 <%
                     String nome = request.getParameter("nome");
                     out.print(nome);
                 %>
             </span>
+            <img src="img_paginas/pngfind.com-pokemon-mew-png-6847790.png" id="nav_logo" alt="Logo">
        
 
-            <img src="img_paginas/pngfind.com-pokemon-mew-png-6847790.png" id="nav_logo" alt="Logo">
             
             <ul id="nav_list">
 
