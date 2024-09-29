@@ -23,26 +23,40 @@
         
     </header>  
 
-   
-        
-      
         <div class="card-login">
+            <div class="form-box">
+                <h2>Login</h2>
+            </div>
             <form action="validar.jsp" method="post"> 
-                <div class="textfield">
+               
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" id="usuario" name="user" required>
                     <label for="usuario">Usuário</label>
-                    <input type="text" id="usuario" name="user" placeholder="Usuário">
                 </div>
-                <div class="textfield">
+                
+                <div class="input-box">
+                    <span class="icon"> <ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" id="senha" name="password" required>
                     <label for="senha">Senha</label>
-                    <input type="password" id="senha" name="password" placeholder="Senha">
                 </div>
-                <input class="bota" type="submit" value="Login">
-         
+                
+                <button type="submit" class="btn">Login</button>
 
+                <div class="remember">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <div class="login-registeter">
+                    <p>Don't have an account?<a href="../web/paginas/cadastrar_usuario.jsp" class="register-link">Register</a></p>
+                </div>
             </form>
         </div>
-   <script src="script.js"></script>
+        
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
 </html>
-
