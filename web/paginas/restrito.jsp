@@ -16,9 +16,10 @@
 </head>
 <body>
     <header>
-        <nav id="navbar">
+        <nav class="navegation">
             
-            <span id="welcome_text">Bem-vindo de volta!</span> 
+            <span id="welcome_text">Bem-vindo de volta!</span>
+            
             <span class="user-name">
                 <%
                     String nome = request.getParameter("nome");

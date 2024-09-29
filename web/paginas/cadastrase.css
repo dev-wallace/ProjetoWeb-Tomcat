@@ -31,46 +31,72 @@
     padding: 0;
     box-sizing: border-box;
 }
-header {
-    display: flex;
-    flex-direction: row; /* Muda para alinhar os itens em linha */
-    justify-content: space-between; /* Espaça os elementos horizontalmente */
-    align-items: center; /* Centraliza os elementos verticalmente */
-    padding: 0 20px; /* Adiciona um pouco de padding para dar espaço ao conteúdo */
-    background: var(--color-light-neutral-1);
-    height: 10vh;
 
-    
-}
-.header-container .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-}
 
-.header-container .logo .imgBox {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-}
 
-.header-container .logo img {
-    position: absolute;
+
+header{
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.gif_conteiner {
+    padding: 20px 100px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    
+    z-index: 99;
+   
 }
+.logo{
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+.navegation a{
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+.navegation a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    left: 0;
+    bottom: -6px;
+    transform: scaleX(0);
+    transition: transform .5s;
+   transform-origin: right;
+}
+.navegation a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+
+
+}
+.navegation .btnLogin-popup{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s;
+}
+.navegation .btnLogin-popup:hover{
+    background: #fff;
+    color: #162938;
+}
+ 
 
 .gif img {
     max-width: 200px; 
@@ -80,10 +106,7 @@ header {
     transform: scaleX(-1); /* Espelha o GIF horizontalmente */ 
 }
 
-a {
-    text-decoration: none;
-    color: #6f51f0;
-}
+
 #main_header h1{
     font-size: 40px;
     position: relative ; /*paar colocar a alinha de baixo o login*/
