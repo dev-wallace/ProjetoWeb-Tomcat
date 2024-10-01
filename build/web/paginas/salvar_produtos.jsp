@@ -36,7 +36,7 @@
        
           /* Conectar com o banco de dados */
           Class.forName("com.mysql.cj.jdbc.Driver");// aponta para a biblioteca JDBC
-          conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/empresa", "root", "root");
+          conecta = DriverManager.getConnection("jdbc:mysql://localhost:3307/empresa", "root", "p@$$w0rd");
           
           /* Verificar se o usuario esta armazenado na tabela do banco de dados*/
            st = conecta.prepareStatement("INSERT INTO produtos (id, nome, marca, preco, data_fab) VALUES (?, ?, ?, ?, ?)");

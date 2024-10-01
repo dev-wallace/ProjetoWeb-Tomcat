@@ -16,38 +16,34 @@
              
         
         
-          /* Declaração de variaveis*/
+         
        
 
       
             
           //Declara as variaveis
-          String n, m , d;
+         
           int i;
-          double p;
+         
           
           // Receber o usuario e a senha
           i = Integer.parseInt(request.getParameter("id"));
-          n = request.getParameter("nome");
-          m = request.getParameter("marca");
-          p = Double.parseDouble(request.getParameter("preco"));
-          d = request.getParameter("data_fab");
+
           
        
           /* Conectar com o banco de dados */
           Class.forName("com.mysql.cj.jdbc.Driver");// aponta para a biblioteca JDBC
           conecta = DriverManager.getConnection("jdbc:mysql://localhost:3307/empresa", "root", "p@$$w0rd");
           
-          /* Verificar se o usuario esta armazenado na tabela do banco de dados*/
-           st = conecta.prepareStatement("INSERT INTO produtos (id, nome, marca, preco, data_fab) VALUES (?, ?, ?, ?, ?)");
-                 
-          st.setInt(1,i);
-          st.setString(2,n);
-          st.setString(3,m);
-            st.setDouble(4,p);
-          st.setString(5,d);
-          
-          st.executeUpdate();// executa o INSET na tabela do DB
+          /* ecluir produtos do banco de dados*/
+           st = conecta.prepareStatement("DELETE FROM produto WHERE  ID=?");
+                
+         int status = st.executeUpdate();// executa o DELTE na tabela do DB
+        if (status == 1) {
+            out.print("Produto excluído com sucesso.");
+        } else {
+            out.print("Produto não encontrado.");
+        }
           
           //Informar o usuarios que os dados foram gravados
           out.print("Produtos adicionado com sucesso");
