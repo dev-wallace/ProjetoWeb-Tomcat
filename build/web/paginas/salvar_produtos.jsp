@@ -2,6 +2,7 @@
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.SQLException"%>
 
 
 <html>
@@ -33,7 +34,9 @@
           p = Double.parseDouble(request.getParameter("preco"));
           d = request.getParameter("data_fab");
           
-       
+       try{
+
+      
           /* Conectar com o banco de dados */
           Class.forName("com.mysql.cj.jdbc.Driver");// aponta para a biblioteca JDBC
           conecta = DriverManager.getConnection("jdbc:mysql://localhost:3307/empresa", "root", "p@$$w0rd");
@@ -51,6 +54,16 @@
           
           //Informar o usuarios que os dados foram gravados
           out.print("Produtos adicionado com sucesso");
+
+           }catch(SQLException erro){
+            if(erro.getMassage().contains("Duplicate entry")){
+                out.print("esse produto ja esta cadastrado")
+            }else{
+                 out.print("ERRO: ntre em contato com admin")
+
+            }
+           }
+    
   
     %>   
     <p> 
