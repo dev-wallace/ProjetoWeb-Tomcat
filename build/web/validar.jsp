@@ -18,7 +18,7 @@
             Class.forName("com.mysql.cj.jdbc.Driver");
             
             // Estabelece a conexão com o banco de dados
-            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/empresa", "root", "root");
+            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3307/empresa", "root", "p@$$w0rd");
             
             // Prepara a consulta SQL
             String sql = "SELECT * FROM usuarios WHERE usuario = ? AND senha = ?";
