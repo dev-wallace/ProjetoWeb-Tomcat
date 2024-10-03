@@ -1,8 +1,4 @@
-<%-- 
-    Document   : cadastrar_usuario.jsp
-    Created on : 17 de set. de 2024, 09:32:39
-    Author     : jefferson.etokura
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.DriverManager"%>
@@ -23,13 +19,11 @@
             
         //Declara as variáveis
         Connection conecta;
-        String u, s, n;
+        String i;
         PreparedStatement st;
         ResultSet resultado;
-        //Receber os dados digitados no formulário
-        u = request.getParameter("usuario");
-        s = request.getParameter("senha");
-        n = request.getParameter("nome");
+ 
+       
         //Conectar com o banco de dados
         
         
@@ -38,13 +32,28 @@
          
         conecta = DriverManager.getConnection("jdbc:mysql://localhost:3307/empresa", "root", "p@$$wo0rd");
         //Enviar os dados recebidos para a tabela do banco de dados
-        st = conecta.prepareStatement("INSERT INTO usuarios VAlUES(?,?,?)");
-        st.setString(1,u);
-        st.setString(2,s);
-        st.setString(3,n);
-        st.executeUpdate();//Esse comando executa o comando INSERT na tabela do BD
-        //Informar o usuário que os dados foram gravados
-        out.print("Usuário cadastrado com sucesso");
+
+        //verificar se o produto com o id inforado esta na tebela do banco de dapds 
+        st = conecta.prepareStatement("SELECT * FROM produtos");
+        //percorre a varievel resultado exibindo cada linha do produto
+
+        resultado = st.executeQuery(); 
+        //Esse comando executa o comando SELECT na tabela do BD
+
+     out.print("<table border=1");
+     out.print("<tr><th>ID</th <th>nome</th <th>preco</th <th>data de fabricacao</th> </tr>");
+
+        while(resultado.next()){
+            out.print("<tr><id>"+resultado.getString("id")+"</td><td>"+resultado.getString("nome")+"</td><td>"+resultado.getString("marca")+"</td><td>"+resultado.getString("preco")+"</td><td>"+resultado.getString("data_fab")+"</td></tr>");
+
+
+            
+        }
+        out.print("</table> ");
+      
+        
+
+       
         
         %>
         
