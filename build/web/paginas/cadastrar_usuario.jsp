@@ -36,7 +36,7 @@
         //aponta para a biblioteca JDBC
          Class.forName("com.mysql.cj.jdbc.Driver");
          
-        conecta = DriverManager.getConnection("jdbc:mysql://localhost:3307/empresa", "root", "p@$$wo0rd");
+      conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/empresa", "root", "root");
         //Enviar os dados recebidos para a tabela do banco de dados
         st = conecta.prepareStatement("INSERT INTO usuarios VAlUES(?,?,?)");
         st.setString(1,u);

@@ -3,53 +3,43 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.PreparedStatement"%>
 
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Excluir produtos</title>
     </head>
     <body>
         <% 
             Connection conecta = null;
-             PreparedStatement st = null;
-             
-        
-        
-         
-       
+            PreparedStatement st = null;
 
-      
-            
-          //Declara as variaveis
-         
-          int i;
-         
-          
-          // Receber o usuario e a senha
-          i = Integer.parseInt(request.getParameter("id"));
+            try {
+                // Receber o ID do produto a ser excluído
+                int id = Integer.parseInt(request.getParameter("id"));
 
-          
-       
-          /* Conectar com o banco de dados */
-          Class.forName("com.mysql.cj.jdbc.Driver");// aponta para a biblioteca JDBC
-          conecta = DriverManager.getConnection("jdbc:mysql://localhost:3307/empresa", "root", "p@$$w0rd");
-          
-          /* ecluir produtos do banco de dados*/
-           st = conecta.prepareStatement("DELETE FROM produto WHERE  ID=?");
-                
-         int status = st.executeUpdate();// executa o DELTE na tabela do DB
-        if (status == 1) {
-            out.print("Produto excluído com sucesso.");
-        } else {
-            out.print("Produto não encontrado.");
-        }
-          
-          //Informar o usuarios que os dados foram gravados
-          out.print("Produtos adicionado com sucesso");
-  
-    %>   
-    <p> 
-    
+                /* Conectar com o banco de dados */
+                Class.forName("com.mysql.cj.jdbc.Driver"); // Aponta para a biblioteca JDBC
+                conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/empresa", "root", "root");
+
+                /* Excluir produto do banco de dados */
+                st = conecta.prepareStatement("DELETE FROM produtos WHERE ID = ?");
+                st.setInt(1, id); // Define o valor do parâmetro ID
+
+                int status = st.executeUpdate(); // Executa o DELETE na tabela do DB
+
+                if (status == 1) {
+                    out.print("Produto excluído com sucesso.");
+                } else {
+                    out.print("Produto não encontrado.");
+                }
+
+            } catch (Exception e) {
+                out.print("Erro ao excluir o produtos " + e.getMessage());
+            } finally {
+                // Fechar recursos para evitar vazamento de memória
+                if (st != null) try { st.close(); } catch (Exception e) { e.printStackTrace(); }
+                if (conecta != null) try { conecta.close(); } catch (Exception e) { e.printStackTrace(); }
+            }
+        %>
     </body>
 </html>

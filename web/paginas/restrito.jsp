@@ -40,6 +40,12 @@
                 <li class="nav-item">
                     <a href="salvar_produto.html">Salvar produto</a>
                 </li>
+                <li class="nav-item"></li>
+                    <a href="../paginas/excluir_produto.html">excluir</a>
+                </li>
+                <li class="nav-item"></li>
+                <a href="../paginas/listar_produtos.jsp">listar</a>
+            </li>
                 <li class="nav-item">
                     <a href="../index.html">Sair</a>
                 </li>
