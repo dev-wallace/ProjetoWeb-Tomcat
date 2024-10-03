@@ -4,11 +4,11 @@
     Author     : jefferson.etokura
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.ResultSet"%>
+
 
 
 <!DOCTYPE html>
@@ -21,12 +21,13 @@
         
         <%
             
-        //Declara as variáveis
+        //Declara as vari�veis
         Connection conecta;
         String u, s, n;
         PreparedStatement st;
-        ResultSet resultado;
-        //Receber os dados digitados no formulário
+        
+        
+        //Receber os dados digitados no formul�rio
         u = request.getParameter("usuario");
         s = request.getParameter("senha");
         n = request.getParameter("nome");
@@ -38,13 +39,14 @@
          
       conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/empresa", "root", "root");
         //Enviar os dados recebidos para a tabela do banco de dados
-        st = conecta.prepareStatement("INSERT INTO usuarios VAlUES(?,?,?)");
+        
+        st = conecta.prepareStatement("INSERT INTO usuarios (usuario, senha, nome) VALUES (?, ?, ?)");
+
         st.setString(1,u);
         st.setString(2,s);
         st.setString(3,n);
-        st.executeUpdate();//Esse comando executa o comando INSERT na tabela do BD
-        //Informar o usuário que os dados foram gravados
-        out.print("Usuário cadastrado com sucesso");
+        st.executeUpdate();
+        out.print("Usu�rio cadastrado com sucesso");
         
         %>
         

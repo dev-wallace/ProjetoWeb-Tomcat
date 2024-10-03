@@ -50,7 +50,7 @@
                out.print("Data de fabricaçao"+resultado.getString("data_fab"));
         }
        else{
-        ou.print("Produto nao cadastrado")
+        out.print("Produto nao cadastrado");
        }
         
        
