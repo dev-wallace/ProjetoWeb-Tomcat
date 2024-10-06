@@ -44,7 +44,7 @@
                     
                 
                 <li class="nav-item"><a href="../paginas/listar_produtos.jsp">listar</a></li>
-                   <li class="nav-item"><a href="../paginas/consultar_produto">consultar produto</a></li>
+                   <li class="nav-item"><a href="../paginas/consultar_produto.html">consultar produto</a></li>
                 
           
                 <li class="nav-item">

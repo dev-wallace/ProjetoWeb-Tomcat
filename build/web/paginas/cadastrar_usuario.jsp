@@ -21,13 +21,13 @@
         
         <%
             
-        //Declara as variáveis
+        //Declara as variï¿½veis
         Connection conecta;
         String u, s, n;
         PreparedStatement st;
         
         
-        //Receber os dados digitados no formulário
+        //Receber os dados digitados no formulï¿½rio
         u = request.getParameter("usuario");
         s = request.getParameter("senha");
         n = request.getParameter("nome");
@@ -46,7 +46,7 @@
         st.setString(2,s);
         st.setString(3,n);
         st.executeUpdate();
-        out.print("Usuário cadastrado com sucesso");
+        out.print("Usuario cadastrado com sucesso");
         
         %>
         
