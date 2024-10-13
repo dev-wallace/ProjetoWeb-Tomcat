@@ -29,14 +29,7 @@ header{
    
 }
 
-.navegation {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 15px; 
-  
-}
+
 
 #nav_list {
     list-style-type: none; /* Remove os marcadores da lista */
@@ -58,7 +51,7 @@ header{
 #nav_logo {
     height: 100px;
     width: auto;
-    margin-right: 660px;
+    margin-right: 60px;
 }
 
 #welcome_text {
@@ -73,7 +66,15 @@ header{
     user-select: none;
     margin-left: 20px;
 }
-
+.navegation {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px; 
+    margin: 40px;
+  
+}
 .navegation a{
     position: relative;
     font-size: 1.1em;
